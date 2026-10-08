@@ -1,14 +1,43 @@
 <!doctype html>
 <html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Pirate RSS</title>
-<style>body{font-family:system-ui,sans-serif;max-width:32rem;margin:3rem auto;padding:0 1rem;line-height:1.6}a.b{display:inline-block;padding:.7rem 1.2rem;border-radius:.6rem;background:#222;color:#fff;text-decoration:none}code{direction:ltr;unicode-bidi:plaintext;word-break:break-all}</style></head>
-<body><h1>🏴‍☠️ Pirate RSS</h1>
-<p><strong>קוראים את האינטרנט בלי שהאינטרנט יקרא אתכם.</strong> חדשות, בלוגים ופודקאסטים ממקורות שבחרתם, בלי אלגוריתם שמחליט בשבילכם ובלי להיות הסחורה. ארגזי האוצר שלכם, הכללים שלכם. 😜</p>
-<p dir="ltr" lang="en"><em>Read the web without the web reading you. Your sources, your rules, no algorithm in the captain's chair.</em></p>
-<p>אם האפליקציה מותקנת, הקישור הזה אמור היה להיפתח בה ישירות (מסך המקור, ההוספה בסימנייה). אם הגעת לכאן, היא לא מותקנת או שהדפדפן לא העביר את הקישור.</p>
-<p id="t"></p><p><a class="b" id="a" href="#">פתיחת כתובת הפיד</a></p>
-<p><a class="b" href="https://github.com/yohaybn/RSS/releases">הורדת האפליקציה / Download the app</a></p>
+<style>
+:root{--bg:#F8F7FC;--ink:#1d2640;--blue:#357ab0;--yellow:#f6c030;--red:#dd4435}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
+main{max-width:36rem;margin:0 auto;padding:1.5rem 1rem 3rem}
+header{text-align:center;padding:1rem 0 .5rem}header img{width:200px;height:200px}
+h1{font-size:2rem;margin:.2rem 0}h1 span{color:var(--red)}
+.tag{font-size:1.15rem;font-weight:700;margin:.3rem 0}.en{color:#4a5472}
+.notice{background:#fff;border-radius:1rem;padding:1rem;margin:1.2rem 0;box-shadow:0 1px 4px rgba(29,38,64,.12);border-inline-start:6px solid var(--yellow)}
+.notice code{display:block;direction:ltr;unicode-bidi:plaintext;word-break:break-all;background:#eef0f7;border-radius:.5rem;padding:.4rem .6rem;margin:.5rem 0;font-size:.85rem}
+a.btn{display:block;text-align:center;text-decoration:none;font-weight:700;border-radius:.8rem;padding:.85rem 1rem;margin:.6rem 0}
+a.play{background:var(--ink);color:#fff;font-size:1.1rem}a.play small{display:block;font-weight:400;opacity:.8}
+a.ghost{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+.card{display:flex;align-items:center;gap:1rem;background:#fff;border-radius:1rem;padding:.8rem 1rem;margin:.8rem 0;box-shadow:0 1px 4px rgba(29,38,64,.1)}
+.card img{width:96px;height:96px;flex:none}.card h2{font-size:1.1rem;margin:0}.card h3{font-size:.9rem;margin:.5rem 0 0;color:var(--blue)}.card p{margin:.2rem 0;font-size:.95rem}.card p.en{font-size:.85rem;margin:0}
+footer{text-align:center;font-size:.85rem;color:#4a5472;margin-top:2rem}
+</style></head>
+<body><main>
+<header><img src="../img/intro_1.png" alt="" width="200" height="200"><h1>Pirate <span>RSS</span></h1>
+<p class="tag">קוראים את האינטרנט בלי שהאינטרנט יקרא אתכם 🏴‍☠️</p>
+<p class="tag en" dir="ltr" lang="en">Read the web without the web reading you.</p>
+<p>חדשות, בלוגים ופודקאסטים ממקורות שבחרתם, בלי אלגוריתם שמחליט בשבילכם ובלי להיות הסחורה. ארגזי האוצר שלכם, הכללים שלכם. 😜</p>
+<p class="en" dir="ltr" lang="en">Your sources, your rules, no algorithm in the captain's chair.</p></header>
+<a class="btn play" href="https://play.google.com/store/apps/details?id=com.yoyo.rss">הורדה מ-Google Play<small dir="ltr" lang="en">Get it on Google Play</small></a>
+<div class="notice"><strong>אם האפליקציה מותקנת, הקישור הזה נפתח בה ישירות (מסך המקור; ההוספה בסימנייה). אם הגעת לכאן, היא לא מותקנת או שהדפדפן לא העביר את הקישור.</strong>
+<span dir="ltr" lang="en" style="display:block;color:#4a5472">If the app is installed, this link opens in it directly (source screen; add it with the bookmark). If you landed here, it is not installed or the browser did not hand the link over.</span>
+<div id="t" hidden><code id="u"></code><a class="btn ghost" id="a" href="#">פתיחת כתובת הפיד<small dir="ltr" lang="en" style="display:block;font-weight:400">Open the feed address</small></a></div>
+<p id="miss" hidden>הקישור חסר כתובת. / The link has no address.</p></div>
+<section class="card"><img src="../img/intro_2.png" alt="" width="180" height="180" loading="lazy"><div><h2>הפיד שלכם</h2><p>כל הכתבות מהמקורות שבחרתם מסודרות יחד לקריאה נוחה</p><h3 dir="ltr" lang="en">Your feed</h3><p dir="ltr" lang="en" class="en">All articles from the sources you chose, lined up together for easy reading</p></div></section>
+<section class="card"><img src="../img/intro_3.png" alt="" width="180" height="180" loading="lazy"><div><h2>מגלים מקורות חדשים</h2><p>מחפשים אתרים ונושאים שמעניינים אתכם ומוסיפים אותם לפיד</p><h3 dir="ltr" lang="en">Discover new sources</h3><p dir="ltr" lang="en" class="en">Search for sites and topics you care about and add them to your feed</p></div></section>
+<section class="card"><img src="../img/intro_4.png" alt="" width="180" height="180" loading="lazy"><div><h2>אותו סיפור מכמה מקורות</h2><p>סריקה חכמה לבחירתכם מקבצת כתבות דומות פותחים את הערימה ובוחרים מה לקרוא</p><h3 dir="ltr" lang="en">The same story from several sources</h3><p dir="ltr" lang="en" class="en">An optional smart scan groups similar articles Open the stack and pick what to read</p></div></section>
+<section class="card"><img src="../img/intro_5.png" alt="" width="180" height="180" loading="lazy"><div><h2>קוראים בשפה שלכם</h2><p>מתרגמים כתבה לשפת האפליקציה ובוחרים איך לבצע את התרגום</p><h3 dir="ltr" lang="en">Read in your language</h3><p dir="ltr" lang="en" class="en">Translate an article into the app language and choose how the translation is done</p></div></section>
+<section class="card"><img src="../img/intro_6.png" alt="" width="180" height="180" loading="lazy"><div><h2>מקשיבים וממשיכים</h2><p>הקראת כתבות עם מעבר אוטומטי לבאה אפשר לשלוט בניגון גם מהתראת ההשמעה</p><h3 dir="ltr" lang="en">Listen and keep going</h3><p dir="ltr" lang="en" class="en">Read articles aloud and move to the next one automatically You can control playback from the playback notification</p></div></section>
+<section class="card"><img src="../img/intro_7.png" alt="" width="180" height="180" loading="lazy"><div><h2>מתחברים לגיבוי</h2><p>מחברים חשבון לגיבוי בענן של ההגדרות והכתבות ששמרתם</p><h3 dir="ltr" lang="en">Back up with an account</h3><p dir="ltr" lang="en" class="en">Connect an account to back up your settings and the articles you saved to the cloud</p></div></section>
+<section class="card"><img src="../img/intro_8.png" alt="" width="180" height="180" loading="lazy"><div><h2>הפיד גם במסך הבית</h2><p>ווידג׳טים לכותרות מכל המקורות או למקור אחד שבחרתם</p><h3 dir="ltr" lang="en">The feed on your home screen</h3><p dir="ltr" lang="en" class="en">Widgets with headlines from all sources or from one source you pick</p></div></section>
+<footer>Pirate RSS · <a href="https://play.google.com/store/apps/details?id=com.yoyo.rss">Google Play</a></footer>
+</main>
 <script>
 var u=new URLSearchParams(location.search).get('url');
-if(u&&/^https?:\/\//i.test(u)){document.getElementById('t').innerHTML='<code></code>';document.querySelector('#t code').textContent=u;document.getElementById('a').href=u;}
-else{document.getElementById('t').textContent='הקישור חסר כתובת.';document.getElementById('a').style.display='none';}
+if(u&&/^https?:\/\//i.test(u)){document.getElementById('t').hidden=false;document.getElementById('u').textContent=u;document.getElementById('a').href=u;}
+else{document.getElementById('miss').hidden=false;}
 </script></body></html>
