@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Pirate RSS</title>
+<style>body{font-family:system-ui,sans-serif;max-width:32rem;margin:3rem auto;padding:0 1rem;line-height:1.6}a.b{display:inline-block;padding:.7rem 1.2rem;border-radius:.6rem;background:#222;color:#fff;text-decoration:none}code{direction:ltr;unicode-bidi:plaintext;word-break:break-all}</style></head>
+<body><h1>Pirate RSS</h1>
+<p>אם האפליקציה מותקנת, הקישור הזה אמור היה להיפתח בה ישירות. אם הגעת לכאן, היא לא מותקנת או שהדפדפן לא העביר את הקישור.</p>
+<p id="t"></p><p><a class="b" id="a" href="#">פתיחת הכתבה באתר</a></p>
+<script>
+var u=new URLSearchParams(location.search).get('url');
+if(u&&/^https?:\/\//i.test(u)){document.getElementById('t').innerHTML='<code></code>';document.querySelector('#t code').textContent=u;document.getElementById('a').href=u;}
+else{document.getElementById('t').textContent='הקישור חסר כתובת.';document.getElementById('a').style.display='none';}
+</script></body></html>
