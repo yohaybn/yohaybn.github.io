@@ -1,23 +1,26 @@
 <!doctype html>
 <html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Pirate RSS</title>
 <style>
-:root{--bg:#F8F7FC;--ink:#1d2640;--blue:#357ab0;--yellow:#f6c030;--red:#dd4435}
+:root{--bg:#F8F5EE;--ink:#1B2233;--navy:#0D2A4C;--burg:#5D1832;--gold:#CCA667;--card:#fff;--line:#E4DDCF;--mute:#4A4A44;--code:#F1EDE3}
+@media(prefers-color-scheme:dark){:root{--bg:#0D2A4C;--ink:#F3EEE2;--card:#14355C;--line:#24477A;--mute:#C9C2B2;--code:#0A2040}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
-main{max-width:36rem;margin:0 auto;padding:1.5rem 1rem 3rem}
-header{text-align:center;padding:1rem 0 .5rem}header img{width:200px;height:200px}
-h1{font-size:2rem;margin:.2rem 0}h1 span{color:var(--red)}
-.tag{font-size:1.15rem;font-weight:700;margin:.3rem 0}.en{color:#4a5472}
-.notice{background:#fff;border-radius:1rem;padding:1rem;margin:1.2rem 0;box-shadow:0 1px 4px rgba(29,38,64,.12);border-inline-start:6px solid var(--yellow)}
-.notice code{display:block;direction:ltr;unicode-bidi:plaintext;word-break:break-all;background:#eef0f7;border-radius:.5rem;padding:.4rem .6rem;margin:.5rem 0;font-size:.85rem}
+main{max-width:36rem;margin:0 auto;padding:0 1rem 3rem}
+header{background:var(--navy);margin:0 -1rem;padding:2.2rem 1.2rem 1.6rem;text-align:center;border-bottom:4px solid var(--burg)}
+h1{font-size:2.2rem;margin:0;color:var(--gold);letter-spacing:.02em}h1 span{color:var(--gold)}
+.tag{font-size:1.1rem;font-weight:700;margin:.6rem 0 .2rem;color:#F8F5EE}header p#sub{margin:.2rem 0 0;color:#D9D3C4}
+.notice{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1rem;margin:1.2rem 0;border-inline-start:6px solid var(--burg)}
+.notice code{display:block;direction:ltr;unicode-bidi:plaintext;word-break:break-all;background:var(--code);border-radius:.5rem;padding:.4rem .6rem;margin:.5rem 0;font-size:.85rem}
 a.btn{display:block;text-align:center;text-decoration:none;font-weight:700;border-radius:.8rem;padding:.85rem 1rem;margin:.6rem 0}
-a.play{background:var(--ink);color:#fff;font-size:1.1rem}a.play small{display:block;font-weight:400;opacity:.8}
-a.ghost{background:#fff;color:var(--blue);border:2px solid var(--blue)}
-.card{display:flex;align-items:center;gap:1rem;background:#fff;border-radius:1rem;padding:.8rem 1rem;margin:.8rem 0;box-shadow:0 1px 4px rgba(29,38,64,.1)}
-.card img{width:96px;height:96px;flex:none}.card h2{font-size:1.1rem;margin:0}.card h3{font-size:.9rem;margin:.5rem 0 0;color:var(--blue)}.card p{margin:.2rem 0;font-size:.95rem}
-footer{text-align:center;font-size:.85rem;color:#4a5472;margin-top:2rem}
+a.play{background:var(--burg);color:#fff;font-size:1.1rem;margin-top:1.2rem}a.play small{display:block;font-weight:400;opacity:.8}
+a.ghost{background:transparent;color:var(--burg);border:2px solid var(--burg)}
+@media(prefers-color-scheme:dark){a.play{background:var(--gold);color:var(--navy)}a.ghost{color:var(--gold);border-color:var(--gold)}.notice{border-inline-start-color:var(--gold)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:.8rem 1rem;margin:.8rem 0}
+.card h2{font-size:1.05rem;margin:0;color:var(--burg)}.card p{margin:.2rem 0;font-size:.95rem;color:var(--mute)}
+@media(prefers-color-scheme:dark){.card h2{color:var(--gold)}}
+footer{text-align:center;font-size:.85rem;color:var(--mute);margin-top:2rem}footer a{color:inherit}
 </style></head>
 <body><main>
-<header><img src="../img/intro_1.png" alt="" width="200" height="200"><h1>Pirate <span>RSS</span></h1>
+<header><h1>Pirate <span>RSS</span></h1>
 <p class="tag" id="tag"></p><p id="sub"></p></header>
 <a class="btn play" id="play" href="https://play.google.com/store/apps/details?id=com.yoyo.rss"></a>
 <div class="notice"><strong id="n"></strong>
@@ -35,7 +38,7 @@ var L=pick(),U=D.ui[L],h=document.documentElement;h.lang=L;h.dir=RTL[L]?'rtl':'l
 function s(i,v){document.getElementById(i).textContent=v}
 s('tag',U.tag);s('sub',U.sub);s('play',U.play);s('n',U.n);s('a',U.o);s('miss',U.miss);
 var c=document.getElementById('cards');D.cards[L].forEach(function(x,i){if(!i)return;var e=document.createElement('section');e.className='card';
-e.innerHTML='<img src="../img/intro_'+(i+1)+'.png" alt="" width="180" height="180" loading="lazy"><div><h2></h2><p></p></div>';
+e.innerHTML='<div><h2></h2><p></p></div>';
 e.querySelector('h2').textContent=x[0];e.querySelector('p').textContent=x[1];c.appendChild(e);});
 var u=P.get('url');
 if(u&&/^https?:\/\//i.test(u)){document.getElementById('t').hidden=false;document.getElementById('u').textContent=u;document.getElementById('a').href=u;}
