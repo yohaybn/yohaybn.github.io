@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Delete your account - Pirate RSS</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="../img/favicon-192.png"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<style>
+:root{--bg:#F8F5EE;--ink:#1B2233;--navy:#0D2A4C;--burg:#5D1832;--gold:#CCA667;--card:#fff;--line:#E4DDCF;--mute:#4A4A44}
+@media(prefers-color-scheme:dark){:root{--bg:#0D2A4C;--ink:#F3EEE2;--card:#14355C;--line:#24477A;--mute:#C9C2B2}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
+main{max-width:36rem;margin:0 auto;padding:0 1rem 3rem}
+header{background:var(--navy);margin:0 -1rem;padding:2rem 1.2rem 1.4rem;text-align:center;border-bottom:4px solid var(--burg)}
+h1{font-size:1.8rem;margin:0;color:var(--gold)}header p{margin:.4rem 0 0;color:#D9D3C4}
+section{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:.8rem 1rem;margin:1rem 0}
+section h2{font-size:1.05rem;margin:.1rem 0 .4rem;color:var(--burg)}
+@media(prefers-color-scheme:dark){section h2{color:var(--gold)}}
+li,p{font-size:.95rem}ul,ol{padding-inline-start:1.3rem;margin:.3rem 0}
+.he{border-top:2px solid var(--gold);margin-top:2rem}
+footer{text-align:center;font-size:.85rem;color:var(--mute);margin-top:2rem}footer a{color:inherit}
+</style></head><body><main>
+<header><h1>Pirate RSS</h1><p>Delete your account and data</p></header>
+
+<section><h2>How to delete your account</h2>
+<p>These steps apply to Pirate RSS (com.yoyo.rss), published on Google Play by yo yo. Account deletion is done inside the app:</p>
+<ol>
+<li>Open Pirate RSS and go to the <strong>Account</strong> screen (signed in with Google).</li>
+<li>Tap <strong>Delete account</strong>.</li>
+<li>Confirm. The app deletes your cloud data first, then your sign-in account, then clears the data stored on your phone.</li>
+</ol>
+<p>If the deletion fails (for example, no connection), the app tells you and keeps your local data. Sign in again and retry.</p></section>
+
+<section><h2>What is deleted</h2>
+<ul>
+<li>Everything stored under your account in the app's cloud backup (Firebase Realtime Database): your profile (name, email, last login), your backed-up settings, your list of subscribed feeds, and your saved articles.</li>
+<li>Your sign-in account (Firebase Authentication).</li>
+<li>All app data on your phone.</li>
+</ul></section>
+
+<section><h2>What is kept</h2>
+<ul>
+<li>Feeds that were added to the app's shared public feed catalog (feed address, title, category). These entries are not linked to your account.</li>
+<li>Crash reports and ad-related data that Google processes under its own retention rules (Firebase Crashlytics, Google AdMob). The app cannot delete these on your behalf.</li>
+</ul></section>
+
+<section class="he" dir="rtl" lang="he"><h2>מחיקת חשבון ונתונים</h2>
+<p>ההנחיות מתייחסות לאפליקציה Pirate RSS (com.yoyo.rss) בגוגל פליי, של yo yo. מחיקת החשבון נעשית בתוך האפליקציה:</p>
+<ol>
+<li>פתחו את Pirate RSS ועברו למסך <strong>החשבון</strong> (מחוברים עם גוגל).</li>
+<li>לחצו על <strong>מחק חשבון</strong>.</li>
+<li>אשרו. האפליקציה מוחקת קודם את הנתונים שלכם בענן, אחר כך את חשבון ההתחברות, ולבסוף מנקה את הנתונים שבטלפון.</li>
+</ol>
+<p>אם המחיקה נכשלה (למשל אין חיבור), האפליקציה תודיע ותשאיר את הנתונים המקומיים. אפשר להתחבר מחדש ולנסות שוב.</p>
+<h2>מה נמחק</h2>
+<ul>
+<li>כל מה ששמור תחת החשבון בגיבוי הענן של האפליקציה (Firebase Realtime Database): פרופיל (שם, אימייל, כניסה אחרונה), הגדרות מגובות, רשימת המקורות שלכם והכתבות השמורות.</li>
+<li>חשבון ההתחברות (Firebase Authentication).</li>
+<li>כל נתוני האפליקציה בטלפון.</li>
+</ul>
+<h2>מה נשאר</h2>
+<ul>
+<li>מקורות שנוספו לקטלוג המקורות הציבורי המשותף של האפליקציה (כתובת, שם, קטגוריה). הרשומות האלה לא מקושרות לחשבון שלכם.</li>
+<li>דוחות קריסה ונתוני פרסום שגוגל מעבדת לפי מדיניות השמירה שלה (Firebase Crashlytics, Google AdMob). האפליקציה לא יכולה למחוק אותם בשמכם.</li>
+</ul></section>
+<footer>Pirate RSS &middot; <a href="https://play.google.com/store/apps/details?id=com.yoyo.rss">Google Play</a></footer>
+</main></body></html>
