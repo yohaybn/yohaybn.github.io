@@ -1,43 +1,91 @@
 <!doctype html>
-<html lang="he" dir="rtl"><head><link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="../img/favicon-192.png"><link rel="apple-touch-icon" href="../img/apple-touch-icon.png"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Pirate RSS: כל האתרים שלכם בפיד אחד נקי. קריאה, תרגום והקראה. חינם ב-Google Play."><title>Pirate RSS - כל האתרים שאתם אוהבים בפיד אחד נקי</title>
-<style>
-:root{--bg:#F8F5EE;--ink:#1B2233;--navy:#0D2A4C;--burg:#5D1832;--gold:#CCA667;--card:#fff;--line:#E4DDCF;--mute:#4A4A44;--code:#F1EDE3}
-@media(prefers-color-scheme:dark){:root{--bg:#0D2A4C;--ink:#F3EEE2;--card:#14355C;--line:#24477A;--mute:#C9C2B2;--code:#0A2040}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
-main{max-width:36rem;margin:0 auto;padding:0 1rem 3rem}
-header{background:var(--navy);margin:0 -1rem;padding:2.2rem 1.2rem 1.6rem;text-align:center;border-bottom:4px solid var(--burg)}
-h1{font-size:2.2rem;margin:0;color:var(--gold);letter-spacing:.02em}h1 span{color:var(--gold)}
-.tag{font-size:1.1rem;font-weight:700;margin:.6rem 0 .2rem;color:#F8F5EE}header p#sub{margin:.2rem 0 0;color:#D9D3C4}
-.notice{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1rem;margin:1.2rem 0;border-inline-start:6px solid var(--burg)}
-.notice code{display:block;direction:ltr;unicode-bidi:plaintext;word-break:break-all;background:var(--code);border-radius:.5rem;padding:.4rem .6rem;margin:.5rem 0;font-size:.85rem}
-a.btn{display:block;text-align:center;text-decoration:none;font-weight:700;border-radius:.8rem;padding:.85rem 1rem;margin:.6rem 0}
-a.play{background:var(--burg);color:#fff;font-size:1.1rem;margin-top:1.2rem}a.play small{display:block;font-weight:400;opacity:.8}
-a.ghost{background:transparent;color:var(--burg);border:2px solid var(--burg)}
-@media(prefers-color-scheme:dark){a.play{background:var(--gold);color:var(--navy)}a.ghost{color:var(--gold);border-color:var(--gold)}.notice{border-inline-start-color:var(--gold)}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:.8rem 1rem;margin:.8rem 0}
-.card h2{font-size:1.05rem;margin:0;color:var(--burg)}.card p{margin:.2rem 0;font-size:.95rem;color:var(--mute)}
-@media(prefers-color-scheme:dark){.card h2{color:var(--gold)}}
-footer{text-align:center;font-size:.85rem;color:var(--mute);margin-top:2rem}footer a{color:inherit}
-header img{width:200px;height:200px}.card{display:flex;gap:.8rem;align-items:center}.card img{width:96px;height:96px;flex:none}.card.ex{display:block}.card.ex p{font-size:1rem}.shots{display:flex;gap:.6rem;overflow-x:auto;padding:.4rem 0 .8rem;scroll-snap-type:x mandatory}.shots img{height:20rem;width:auto;border-radius:.9rem;border:1px solid var(--line);scroll-snap-align:start;flex:none}</style></head>
-<body><main>
-<header><img src="../img/intro_1.png" alt="" width="200" height="200"><h1>Pirate <span>RSS</span></h1>
-<p class="tag" id="tag"></p><p id="sub"></p></header>
-<a class="btn play" id="play" href="https://play.google.com/store/apps/details?id=com.yoyo.rss"></a>
-<div class="notice"><strong id="n"></strong></div>
-<section class="card ex"><div><h2 id="exh"></h2><p id="ext"></p></div></section>
-<div class="shots" id="shots"></div>
-<div id="cards"></div>
-<footer>Pirate RSS &middot; <a href="https://play.google.com/store/apps/details?id=com.yoyo.rss">Google Play</a> &middot; <a href="../privacy/" id="pp"></a></footer><p class="lang" style="margin-top:.8rem"><a href="/open/he/">עברית</a> &middot; <a href="/open/?lang=en">English</a> &middot; <a href="/open/?lang=ar">العربية</a> &middot; <a href="/open/?lang=ru">Русский</a></p>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pirate RSS – כל האתרים שאתם עוקבים אחריהם, בפיד אחד</title>
+<meta name="description" content="Pirate RSS היא אפליקציית קריאה חינמית לאנדרואיד שמרכזת את האתרים והבלוגים שאתם עוקבים אחריהם בפיד אחד. קוראים, מקשיבים, מתרגמים.">
+<link rel="canonical" href="https://yohaybn.github.io/open/he/">
+<link rel="alternate" hreflang="en" href="https://yohaybn.github.io/open/">
+<link rel="alternate" hreflang="he" href="https://yohaybn.github.io/open/he/">
+<link rel="alternate" hreflang="x-default" href="https://yohaybn.github.io/open/">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../img/favicon-192.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="theme-color" content="#0D2A4C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pirate RSS">
+<meta property="og:title" content="Pirate RSS – כל האתרים שאתם עוקבים אחריהם, בפיד אחד">
+<meta property="og:description" content="Pirate RSS היא אפליקציית קריאה חינמית לאנדרואיד שמרכזת את האתרים והבלוגים שאתם עוקבים אחריהם בפיד אחד. קוראים, מקשיבים, מתרגמים.">
+<meta property="og:url" content="https://yohaybn.github.io/open/he/">
+<meta property="og:image" content="https://yohaybn.github.io/open/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pirate RSS">
+<meta property="og:locale" content="he_IL">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pirate RSS – כל האתרים שאתם עוקבים אחריהם, בפיד אחד">
+<meta name="twitter:description" content="Pirate RSS היא אפליקציית קריאה חינמית לאנדרואיד שמרכזת את האתרים והבלוגים שאתם עוקבים אחריהם בפיד אחד. קוראים, מקשיבים, מתרגמים.">
+<meta name="twitter:image" content="https://yohaybn.github.io/open/img/og-image.jpg">
+<link rel="preload" href="../fonts/heebo-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/landing.css">
+</head>
+<body>
+<a class="skip" href="#main">דילוג לתוכן</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./" dir="ltr"><img src="../img/intro_1.png" alt="" width="34" height="34">Pirate <b>RSS</b></a>
+  <a class="lang" href="../?lang=en" lang="en" hreflang="en">English</a>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+  <div>
+    <img class="logo" src="../img/intro_1.png" width="140" height="140" alt="Pirate RSS">
+    <div><span class="eyebrow">אפליקציה חינמית לאנדרואיד · מאת <bdi>yo yo</bdi></span></div>
+    <h1>כל האתרים שאתם עוקבים אחריהם, בפיד אחד.</h1>
+    <p class="sub">Pirate RSS היא אפליקציית קריאה למי שעוקב אחרי הרבה בלוגים ואתרים. מוסיפים מקורות, פותחים את האפליקציה, קוראים. בחינם, עם פרסומות.</p>
+    <a class="btn play" href="https://play.google.com/store/apps/details?id=com.yoyo.rss">להורדה מ-Google Play<small>בחינם · כולל פרסומות</small></a>
+  </div>
+  <figure class="phone"><img src="../img/screens/feed.webp" width="540" height="1141" alt="רשימת הכתבות הראשית" fetchpriority="high"></figure>
+</div></section>
+<section class="rss light"><div class="wrap">
+  <h2>מה זה RSS, בדקה</h2>
+  <div class="card"><p>לרוב האתרים יש פיד: רשימה פשוטה של הכתבות האחרונות שהם פרסמו. אפליקציית RSS אוספת את הפידים מכל האתרים שהוספתם ומציגה אותם יחד, מהחדש לישן.</p><p>אז במקום לפתוח עשרה טאבים כדי לראות מה התפרסם, פותחים אפליקציה אחת. אתם קובעים אילו אתרים בפנים, וזה בדיוק מה שתראו.</p></div>
+</div></section>
+<section class="features light"><div class="wrap">
+  <h2>מה מקבלים</h2>
+  <div class="list"><article class="feat">
+  <div class="txt"><div class="ico"><img src="../img/intro_3.png" alt="" width="44" height="44" loading="lazy"></div><div><div class="n">01</div><h3>פיד אחד לכל המקורות</h3><p>מוסיפים אתרים ובלוגים, מסדרים בתיקיות, ומוצאים מקורות נוספים בחיפוש.</p></div></div>
+  <figure class="phone"><img src="../img/screens/add-site.webp" width="540" height="1141" alt="הוספת אתר / פיד" loading="lazy"></figure>
+</article><article class="feat flip two">
+  <div class="txt"><div class="ico"><svg aria-hidden="true" focusable="false" viewBox="0 0 48 48" fill="none"><rect x="9" y="6" width="30" height="36" rx="4" fill="#fff" stroke="#0D2A4C" stroke-width="2.5"/><rect x="14" y="12" width="20" height="9" rx="2" fill="#CCA667"/><rect x="14" y="25" width="20" height="2.5" rx="1" fill="#0D2A4C"/><rect x="14" y="30" width="16" height="2.5" rx="1" fill="#0D2A4C"/><rect x="14" y="35" width="18" height="2.5" rx="1" fill="#0D2A4C"/></svg></div><div><div class="n">02</div><h3>קריאה נקייה</h3><p>טקסט הכתבה עם התמונות שלה, ערכת נושא בהירה או כהה, ותמיכה מלאה בעברית ובשפות משמאל לימין.</p></div></div>
+  <div class="shots"><figure class="phone"><img src="../img/screens/article.webp" width="540" height="1141" alt="כתבה פתוחה" loading="lazy"></figure><figure class="phone"><img src="../img/screens/sources.webp" width="540" height="1141" alt="רשימת המקורות" loading="lazy"></figure></div>
+</article><article class="feat">
+  <div class="txt"><div class="ico"><svg aria-hidden="true" focusable="false" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="26" r="9" fill="#CCA667"/><path d="M24 6v6M24 40v2M8 26H4M44 26h-4M11 13l3 3M37 13l-3 3" stroke="#0D2A4C" stroke-width="2.5" stroke-linecap="round"/><path d="M6 40h36" stroke="#5D1832" stroke-width="3" stroke-linecap="round"/></svg></div><div><div class="n">03</div><h3>סיכום בוקר</h3><p>תקציר קצר של הכתבות האחרונות מהמקורות שבחרתם.</p></div></div>
+  <figure class="phone"><img src="../img/screens/digest.webp" width="540" height="1141" alt="סיכום בוקר" loading="lazy"></figure>
+</article><article class="feat flip">
+  <div class="txt"><div class="ico"><img src="../img/intro_6.png" alt="" width="44" height="44" loading="lazy"></div><div><div class="n">04</div><h3>הקראה</h3><p>מקשיבים לכתבה בהקראה, והכתבות הבאות כבר בתור. שולטים בניגון גם מההתראה.</p></div></div>
+  <figure class="phone"><img src="../img/screens/player.webp" width="540" height="1141" alt="התראת ההשמעה" loading="lazy"></figure>
+</article><article class="feat">
+  <div class="txt"><div class="ico"><img src="../img/intro_5.png" alt="" width="44" height="44" loading="lazy"></div><div><div class="n">05</div><h3>אפשר גם לתרגם כתבות</h3><p>מתרגמים כתבה לשפת האפליקציה ובוחרים איך התרגום מתבצע.</p></div></div>
+  <figure class="phone"><img src="../img/screens/translated.webp" width="540" height="1141" alt="כתבה מתורגמת" loading="lazy"></figure>
+</article><article class="feat flip">
+  <div class="txt"><div class="ico"><img src="../img/intro_4.png" alt="" width="44" height="44" loading="lazy"></div><div><div class="n">06</div><h3>אותו סיפור מכמה מקורות</h3><p>סריקה חכמה, לבחירתכם, מקבצת כתבות דומות לערימה אחת. פותחים ובוחרים מה לקרוא.</p></div></div>
+  <figure class="phone"><img src="../img/screens/stack.webp" width="540" height="1141" alt="ערימת כתבות" loading="lazy"></figure>
+</article><article class="feat noimg">
+  <div class="txt"><div class="ico"><img src="../img/intro_7.png" alt="" width="44" height="44" loading="lazy"></div><div><div class="n">07</div><h3>גיבוי עם חשבון</h3><p>ההגדרות והכתבות ששמרתם מגובות בענן. או שפשוט ממשיכים כאורחים.</p></div></div>
+</article><article class="feat flip">
+  <div class="txt"><div class="ico"><img src="../img/intro_8.png" alt="" width="44" height="44" loading="lazy"></div><div><div class="n">08</div><h3>ווידג&#x27;טים</h3><p>כותרות במסך הבית, מכל המקורות או ממקור אחד שבחרתם.</p></div></div>
+  <figure class="phone"><img src="../img/screens/widget.webp" width="540" height="1141" alt="ווידג&#x27;ט במסך הבית" loading="lazy"></figure>
+</article></div>
+  <p class="langs">זמינה בארבע שפות. בחינם, עם פרסומות.</p>
+</div></section>
+<section class="cta2"><div class="wrap">
+  <h2>מוכנים כשאתם מוכנים.</h2>
+  <p>מוסיפים כמה אתרים ובודקים אם זה מתאים לאיך שאתם קוראים.</p>
+  <a class="btn play" href="https://play.google.com/store/apps/details?id=com.yoyo.rss">להורדה מ-Google Play<small>בחינם · כולל פרסומות</small></a>
+</div></section>
 </main>
-<script>
-var D={"ui": {"en": {"exh": "What is RSS, and why use it?", "ext": "Most sites and blogs publish a feed: a list of their newest articles that an app can read. Pirate RSS collects the feeds of the sites you choose, so everything new is in one place and you do not have to visit each site. You pick the sources, read in a clean layout, and can listen or translate. You can start as a guest.", "tag": "All your favourite sites in one clean feed 🏴‍☠️", "sub": "Your sources, your rules, no algorithm in the captain's chair.", "play": "Get it on Google Play", "n": "Pirate RSS puts the sites you like into one feed that is easy to read, with a morning digest, read aloud and translation. Free, in Hebrew, English, Arabic and Russian.", "pp": "Privacy", "o": "Open the article on the site", "miss": "The link has no address."}, "he": {"exh": "מה זה RSS ולמה זה שימושי?", "ext": "רוב האתרים והבלוגים מפרסמים פיד: רשימה של הכתבות האחרונות שלהם, שאפליקציה יכולה לקרוא. Pirate RSS אוספת את הפידים של האתרים שבחרתם, כך שכל מה שחדש נמצא במקום אחד ואין צורך לעבור מאתר לאתר. אתם בוחרים את המקורות, קוראים בתצוגה נקייה, ואפשר גם להקשיב ולתרגם. אפשר להתחיל גם כאורח.", "tag": "כל האתרים שאתם אוהבים בפיד אחד נקי 🏴‍☠️", "sub": "כתבות, בלוגים ופודקאסטים ממקורות שבחרתם, בלי אלגוריתם שמחליט בשבילכם.", "play": "הורדה מ-Google Play", "n": "Pirate RSS מרכז את האתרים שאתם אוהבים בפיד אחד וקל לקריאה, עם סיכום בוקר, הקראה ותרגום. בחינם, בעברית, אנגלית, ערבית ורוסית.", "pp": "פרטיות", "o": "פתיחת הכתבה באתר", "miss": "הקישור חסר כתובת."}, "ar": {"exh": "ما هو RSS ولماذا؟", "ext": "تنشر معظم المواقع والمدونات خلاصة: قائمة بأحدث مقالاتها يستطيع أي تطبيق قراءتها. يجمع Pirate RSS خلاصات المواقع التي تختارها، فيكون كل جديد في مكان واحد دون الحاجة إلى زيارة كل موقع. أنت تختار المصادر، وتقرأ بتصميم نظيف، ويمكنك الاستماع أو الترجمة. يمكنك البدء كضيف.", "tag": "كل مواقعك المفضلة في خلاصة واحدة نظيفة 🏴‍☠️", "sub": "مصادرك وقواعدك، بلا خوارزمية تقرر عنك.", "play": "احصل عليه من Google Play", "n": "يجمع Pirate RSS المواقع التي تحبها في خلاصة واحدة سهلة القراءة، مع ملخص صباحي وقراءة بصوت عالٍ وترجمة. مجاني، بالعربية والعبرية والإنجليزية والروسية.", "pp": "الخصوصية", "o": "فتح المقال في الموقع", "miss": "الرابط بلا عنوان."}, "ru": {"exh": "Что такое RSS и зачем он нужен?", "ext": "Большинство сайтов и блогов публикуют ленту: список своих новых статей, который может прочитать приложение. Pirate RSS собирает ленты выбранных вами сайтов, так что всё новое в одном месте, и не нужно заходить на каждый сайт. Вы сами выбираете источники, читаете в чистом оформлении, можете слушать и переводить. Начать можно как гость.", "tag": "Все любимые сайты в одной чистой ленте 🏴‍☠️", "sub": "Ваши источники, ваши правила, без алгоритма у руля.", "play": "Скачать в Google Play", "n": "Pirate RSS собирает любимые сайты в одну удобную ленту: утренняя сводка, озвучивание и перевод. Бесплатно, на иврите, английском, арабском и русском.", "pp": "Конфиденциальность", "o": "Открыть статью на сайте", "miss": "В ссылке нет адреса."}}, "cards": {"en": [["All your sources in one feed", "The articles you like from every site, in one place that is easy to read"], ["Your feed", "All articles from the sources you chose, lined up together for easy reading"], ["Discover new sources", "Search for sites and topics you care about and add them to your feed"], ["The same story from several sources", "An optional smart scan groups similar articles Open the stack and pick what to read"], ["Read in your language", "Translate an article into the app language and choose how the translation is done"], ["Listen and keep going", "Read articles aloud and move to the next one automatically You can control playback from the playback notification"], ["Back up with an account", "Connect an account to back up your settings and the articles you saved to the cloud"], ["The feed on your home screen", "Widgets with headlines from all sources or from one source you pick"]], "he": [["כל המקורות בפיד אחד", "הכתבות שאתם אוהבים מכל האתרים במקום אחד שנוח לקרוא בו"], ["הפיד שלכם", "כל הכתבות מהמקורות שבחרתם מסודרות יחד לקריאה נוחה"], ["מגלים מקורות חדשים", "מחפשים אתרים ונושאים שמעניינים אתכם ומוסיפים אותם לפיד"], ["אותו סיפור מכמה מקורות", "סריקה חכמה לבחירתכם מקבצת כתבות דומות פותחים את הערימה ובוחרים מה לקרוא"], ["קוראים בשפה שלכם", "מתרגמים כתבה לשפת האפליקציה ובוחרים איך לבצע את התרגום"], ["מקשיבים וממשיכים", "הקראת כתבות עם מעבר אוטומטי לבאה אפשר לשלוט בניגון גם מהתראת ההשמעה"], ["מתחברים לגיבוי", "מחברים חשבון לגיבוי בענן של ההגדרות והכתבות ששמרתם"], ["הפיד גם במסך הבית", "ווידג׳טים לכותרות מכל המקורות או למקור אחד שבחרתם"]], "ar": [["كل مصادرك في خلاصة واحدة", "المقالات التي تعجبك من كل موقع، في مكان واحد سهل القراءة"], ["خلاصتك", "كل المقالات من المصادر التي اخترتها، مصفوفة معًا لتسهيل القراءة"], ["اكتشف مصادر جديدة", "ابحث عن المواقع والمواضيع التي تهمك وأضفها إلى خلاصتك"], ["القصة نفسها من عدة مصادر", "فحص ذكي اختياري يجمع المقالات المتشابهة افتح المجموعة واختر ما تقرؤه"], ["اقرأ بلغتك", "ترجم المقال إلى لغة التطبيق واختر طريقة الترجمة"], ["استمع وتابع", "اقرأ المقالات بصوت عالٍ وانتقل إلى التالي تلقائيًا يمكنك التحكم في التشغيل من إشعار التشغيل"], ["نسخ احتياطي عبر حساب", "اربط حسابًا لنسخ إعداداتك والمقالات التي حفظتها احتياطيًا في السحابة"], ["الخلاصة على شاشتك الرئيسية", "عناصر واجهة بعناوين من كل المصادر أو من مصدر واحد تختاره"]], "ru": [["Все ваши источники в одной ленте", "Статьи, которые вам нравятся, со всех сайтов - в одном удобном для чтения месте"], ["Ваша лента", "Все статьи из выбранных вами источников собраны вместе для удобного чтения"], ["Находите новые источники", "Ищите сайты и темы, которые вам интересны, и добавляйте их в ленту"], ["Одна новость из нескольких источников", "Необязательное умное сканирование группирует похожие статьи Откройте стопку и выберите, что читать"], ["Читайте на своём языке", "Переведите статью на язык приложения и выберите способ перевода"], ["Слушайте и продолжайте", "Читайте статьи вслух и переходите к следующей автоматически Управлять воспроизведением можно из уведомления"], ["Резервная копия через аккаунт", "Подключите аккаунт, чтобы сохранять в облаке настройки и сохранённые статьи"], ["Лента на главном экране", "Виджеты с заголовками из всех источников или из одного выбранного источника"]]}},RTL={he:1,ar:1},P=new URLSearchParams(location.search);
-function pick(){var q='he';if(D.ui[q])return q;
-var n=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en'];
-for(var i=0;i<n.length;i++){var c=String(n[i]).toLowerCase().slice(0,2);if(c==='iw')c='he';if(D.ui[c])return c;}return 'en';}
-var L=pick(),U=D.ui[L],h=document.documentElement;h.lang=L;h.dir=RTL[L]?'rtl':'ltr';
-function s(i,v){document.getElementById(i).textContent=v}
-s('tag',U.tag);s('exh',U.exh);s('ext',U.ext);var sh=document.getElementById('shots'),sl=(L==='he')?'he':'en';for(var k=1;k<=3;k++){var im=document.createElement('img');im.src='../img/shot-'+sl+'-'+k+'.jpg';im.alt='';im.width=162;im.height=288;im.loading='lazy';sh.appendChild(im);}s('sub',U.sub);s('play',U.play);s('n',U.n);s('pp',U.pp);
-var c=document.getElementById('cards');D.cards[L].forEach(function(x,i){if(!i)return;var e=document.createElement('section');e.className='card';
-e.innerHTML='<img src="../img/intro_'+(i+1)+'.png" alt="" width="180" height="180" loading="lazy"><div><h2></h2><p></p></div>';
-e.querySelector('h2').textContent=x[0];e.querySelector('p').textContent=x[1];c.appendChild(e);});
-</script></body></html>
+<footer><div class="wrap"><span><bdi>Pirate RSS</bdi> · מאת  <bdi>yo yo</bdi></span><span class="sep">·</span><a href="https://play.google.com/store/apps/details?id=com.yoyo.rss">Google Play</a><span class="sep">·</span><a href="../privacy/">מדיניות פרטיות</a></div></footer>
+</body>
+</html>
