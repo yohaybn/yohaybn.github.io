@@ -9,6 +9,7 @@ Source quality: each file is the largest original available. Nothing was upscale
 - app-icon/ic_launcher-512-parrot-on-navy.png - 512x512 icon from the app repo.
 - app-icon/ic_launcher_foreground-432-transparent.png - parrot on transparent background, 432x432 (the biggest parrot file that exists).
 - app-icon/pipe-loading-spinner.png - the pipe with RSS smoke used as the loading spinner, 574x664.
+- app-icon/parrot.svg, parrot-2048.png, parrot-on-navy-2048.png - vector trace of the parrot (transparent SVG, transparent 2048 PNG, and 2048 square on navy). Traced from the 432 source, so shapes are faithful but not hand-redrawn.
 - illustrations-640-app-source/light and night - the 8 intro illustrations at 640x640 from the app (light and dark variants).
 - landing-illustrations-360-as-published - the same 8 illustrations as published on the landing pages, 360x360.
 - favicon/ - parrot favicon files (32, 192, apple-touch 180, .ico).
