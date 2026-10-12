@@ -8,6 +8,8 @@
 <link rel="canonical" href="https://yohaybn.github.io/open/">
 <link rel="alternate" hreflang="en" href="https://yohaybn.github.io/open/">
 <link rel="alternate" hreflang="he" href="https://yohaybn.github.io/open/he/">
+<link rel="alternate" hreflang="ar" href="https://yohaybn.github.io/open/ar/">
+<link rel="alternate" hreflang="ru" href="https://yohaybn.github.io/open/ru/">
 <link rel="alternate" hreflang="x-default" href="https://yohaybn.github.io/open/">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
@@ -24,15 +26,17 @@
 <meta property="og:image:alt" content="Pirate RSS">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pirate RSS – every site you follow, in one feed">
 <meta name="twitter:description" content="Pirate RSS is a free Android reader that puts the sites and blogs you follow into one feed. Read, listen, translate.">
 <meta name="twitter:image" content="https://yohaybn.github.io/open/img/og-image.jpg">
 <script>
-/* Keep the old behaviour: visitors whose browser prefers Hebrew land on /open/he/ (no redirect when ?lang= is set). */
-(function(){try{var q=new URLSearchParams(location.search).get('lang');q=(q||'').toLowerCase().slice(0,2);if(q){if(q==='he'||q==='iw')location.replace('he/');return;}
+/* Keep the old behaviour: /open/ sends visitors to their language page. ?lang=he|ar|ru goes to that page, ?lang=en stays here; otherwise the first of the browser's languages that we have (en, he, ar, ru) wins. */
+(function(){try{var P={he:'he/',iw:'he/',ar:'ar/',ru:'ru/'};var q=new URLSearchParams(location.search).get('lang');q=(q||'').toLowerCase().slice(0,2);if(q){if(P[q]){location.replace(P[q]);return;}if(q==='en')return;}
 var l=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];
-for(var i=0;i<l.length;i++){var c=String(l[i]).toLowerCase().slice(0,2);if(c==='en')return;if(c==='he'||c==='iw'){location.replace('he/');return;}}}catch(e){}})();
+for(var i=0;i<l.length;i++){var c=String(l[i]).toLowerCase().slice(0,2);if(c==='en')return;if(P[c]){location.replace(P[c]);return;}}}catch(e){}})();
 </script>
 <link rel="preload" href="fonts/heebo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/landing.css">
@@ -41,7 +45,7 @@ for(var i=0;i<l.length;i++){var c=String(l[i]).toLowerCase().slice(0,2);if(c==='
 <a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="wrap">
   <a class="brand" href="./" dir="ltr"><img src="img/intro_1.png" alt="" width="34" height="34">Pirate <b>RSS</b></a>
-  <a class="lang" href="he/" lang="he" hreflang="he">עברית</a>
+  <nav class="langnav" aria-label="Language"><a href="./?lang=en" lang="en" hreflang="en" aria-current="page">EN</a><a href="he/" lang="he" hreflang="he">עברית</a><a href="ar/" lang="ar" hreflang="ar">العربية</a><a href="ru/" lang="ru" hreflang="ru">Русский</a></nav>
 </div></header>
 <main id="main">
 <section class="hero"><div class="wrap">
